@@ -22,7 +22,7 @@
 
 <body>
     <!-- Navbar section  -->
-    <section class="w-full">
+    <section class="w-full sticky top-0 z-10">
         <div class="navbar bg-base-100 w-[90%] mx-auto py-8">
             <div class="flex-1">
                 <a class="btn btn-ghost text-xl">daisyUI</a>
@@ -36,13 +36,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
-                            <span class="badge badge-sm indicator-item">8</span>
+                            <span class="badge badge-sm indicator-item" id="product-amount">0</span>
                         </div>
                     </div>
                     <div tabindex="0" class="card card-compact dropdown-content bg-base-100 z-[1] mt-3 w-52 shadow">
                         <div class="card-body">
-                            <span class="text-lg font-bold">8 Items</span>
-                            <span class="text-info">Subtotal: $999</span>
+                            <span class="text-lg font-bold" id="product-amount-2">8 Items</span>
+                            <span class="text-info">Subtotal: $ <span id="product-price">0</span></span>
                             <div class="card-actions">
                                 <button class="btn btn-primary btn-block">View cart</button>
                             </div>
@@ -82,13 +82,13 @@
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
-                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-primary"><a href="#push-product">Get Started</a></button>
                 </div>
             </div>
         </div>
     </section>
     <!-- product section -->
-    <section class="w-full mt-12 lg:mt-28">
+    <section class="w-full mt-12 lg:mt-28 pb-12 lg:pb-28">
         <div class="w-[90%] mx-auto">
             <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10" id="push-product">
                 

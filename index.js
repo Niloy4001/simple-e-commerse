@@ -4,7 +4,7 @@ const products = [
         category: "Cap",
         name: "UNISEX ORIGINALS WASHED BUCKET",
         seller: "Addidas",
-        img: "https://assets.adidas.com/.../UNISEX_ORIGINALS_WASHED...",
+        img: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/e1e758585df14bbbb7d8aaf000c95bd7_9366/UNISEX_ORIGINALS_WASHED_BUCKET_White_CM3933_01_standard.jpg",
         details: {
             price: 27,
             stock: 14,
@@ -21,7 +21,7 @@ const products = [
         category: "Cap",
         name: "SST Plus Strap-Back Hat",
         seller: "Addidas",
-        img: "https://assets.adidas.com/.../SST_Plus_Strap-Back_Hat...",
+        img: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/92e77a8d84d845d19171ad50003f2ea1_9366/SST_Plus_Strap-Back_Hat_White_FZ8569_01_standard.jpg",
         details: {
             price: 23,
             stock: 14,
@@ -38,7 +38,7 @@ const products = [
         category: "Cap",
         name: "Dispatch Trucker Hat",
         seller: "Addidas",
-        img: "https://assets.adidas.com/.../Dispatch_Trucker_Hat_Black...",
+        img: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/c3981523051c4a978674ad3c01015664_9366/Dispatch_Trucker_Hat_Black_EY5534_01_standard.jpg",
         details: {
             price: 28,
             stock: 16,
@@ -55,7 +55,7 @@ const products = [
         category: "Earphones",
         name: "adidas Z.N.E. 01 True Wireless Earbuds",
         seller: "Addidas",
-        img: "https://assets.adidas.com/.../adidas_Z.N.E._01_True...",
+        img: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/00276c6c380b41bcb29fadcc00f98312_9366/adidas_Z.N.E._01_True_Wireless_Earbuds_Grey_EY5116_42_detail.jpg",
         details: {
             price: 142,
             stock: 11,
@@ -72,7 +72,7 @@ const products = [
         category: "Earphones",
         name: "adidas Z.N.E. 01 ANC True Wireless Earbuds",
         seller: "Addidas",
-        img: "https://assets.adidas.com/.../adidas_Z.N.E._01_ANC_True...",
+        img: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/b322cdef8e654551ace9adcc00f963ed_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5114_41_detail.jpg",
         details: {
             price: 135,
             stock: 16,
@@ -89,7 +89,7 @@ const products = [
         category: "Earphones",
         name: "FWD-01 Sport In-Ear Headphones",
         seller: "Addidas",
-        img: "https://assets.adidas.com/.../FWD-01_Sport_In-Ear...",
+        img: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/2cdb8652aa2340369ba2aa79010062d1_9366/FWD-01_Sport_In-Ear_Headphones_Black_CM5016_01_standard.jpg",
         details: {
             price: 185,
             stock: 8,
@@ -106,7 +106,7 @@ const products = [
         category: "Earphones",
         name: "adidas FWD-02 Sport True Wireless Earbuds",
         seller: "Addidas",
-        img: "https://assets.adidas.com/.../adidas_FWD-02_Sport_True...",
+        img: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/523731a02e914d318cb4adcc00f985ba_9366/adidas_FWD-02_Sport_True_Wireless_Earbuds_Grey_EY5113_03_standard_hover.jpg",
         details: {
             price: 162,
             stock: 14,
@@ -123,7 +123,7 @@ const products = [
         category: "Earphones",
         name: "adidas Z.N.E. 01 ANC True Wireless Earbuds",
         seller: "Addidas",
-        img: "https://assets.adidas.com/.../adidas_Z.N.E._01_ANC_True...",
+        img: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/9e6e7967b3b24ef298f5adcc00f983ec_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5115_41_detail.jpg",
         details: {
             price: 110,
             stock: 15,
@@ -154,16 +154,35 @@ for (let item of products) {
                         <h2 class="card-title">${item.name}</h2>
                         <p>Price : ${item.details.price}</p>
                         <div class="card-actions justify-end">
-                            <button class="btn btn-primary">Buy Now</button>
+                            <button class="btn btn-primary" onclick = " updateCart(${item.details.price})">Buy Now</button>
                         </div>
                     </div>
                 </div>
 `
-productsDiv.appendChild(div)
-    console.log(div);
-    
+    productsDiv.appendChild(div)
+
 
 }
+
+const productAmount = document.getElementById('product-amount');
+const productAmount1 = document.getElementById('product-amount-2');
+const productPrice = document.getElementById('product-price');
+
+let count = 0;
+let productInitialPrice = 0;
+
+let updateCart = (price) => {
+    count++;
+    productAmount.innerText = count;
+    productAmount1.innerText = count;
+    productInitialPrice = productInitialPrice + price;
+    productPrice.innerText = productInitialPrice;
+   
+    
+    
+    
+    
+} 
 
 
 
